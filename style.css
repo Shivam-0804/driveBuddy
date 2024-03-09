@@ -212,6 +212,20 @@ a:visited {
   cursor: pointer;
 }
 
+/* option tab */
+.pac-container .pac-item {
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+  color: black;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.pac-container .pac-item:hover {
+  background-color: #f2f2f2;
+}
+
 /* Media queries */
 @media only screen and (min-width: 1524px) and (max-width: 1724px) {
   .nav_bar-child {
