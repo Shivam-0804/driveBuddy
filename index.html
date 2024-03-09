@@ -47,9 +47,10 @@
                     </ul>
                 </div>
                 <div class="search_body">
-                    <div class="search_box"><span id="curr"></span><input type="text" placeholder="Current Location">
+                    <div class="search_box"><span id="curr"></span><input type="text" placeholder="Current Location"
+                            id="current">
                     </div>
-                    <div class="search_box"><span id="loc"></span><input type="text" placeholder="Enter Destination">
+                    <div class="search_box"><span id="loc"></span><input type="text" placeholder="Enter Destination" id="destination">
                     </div>
                     <div class="box">
                         <div class="sub_box">
@@ -63,6 +64,10 @@
             </div>
         </div>
     </div>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdnBmOuDyXW3seo8Iw3goRhZEmGVRsqNM&callback=initMap&libraries=places&v=weekly&solution_channel=GMP_CCS_autocomplete_v1"
+        defer></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
