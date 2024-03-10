@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Closest First and Last Intersections</title>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</head>
+<body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let directionsService;
+
+    function initMap() {
+        directionsService = new google.maps.DirectionsService();
+    }
+
+    function findClosestFirstAndLastIntersections(origin1, destination1, origin2, destination2) {
+        const request1 = {
+            origin: origin1,
+            destination: destination1,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+
+        const request2 = {
+            origin: origin2,
+            destination: destination2,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+
+        directionsService.route(request1, function (result1, status1) {
+            if (status1 === google.maps.DirectionsStatus.OK) {
+                directionsService.route(request2, function (result2, status2) {
+                    if (status2 === google.maps.DirectionsStatus.OK) {
+                        const route1 = result1.routes[0];
+                        const route2 = result2.routes[0];
+                        const intersections = findIntersections(route1, route2);
+                        if (intersections.length > 0) {
+                            const closestFirstIntersection = findClosestFirstIntersection(intersections);
+                            const closestLastIntersection = findClosestLastIntersection(intersections);
+                            console.log("Closest First Intersection:", closestFirstIntersection);
+                            console.log("Closest Last Intersection:", closestLastIntersection);
+                        } else {
+                            console.log("No intersections found.");
+                        }
+                    } else {
+                        console.error("Error plotting path B:", status2);
+                        alert("Error plotting path B: " + status2);
+                    }
+                });
+            } else {
+                console.error("Error plotting path A:", status1);
+                alert("Error plotting path A: " + status1);
+            }
+        });
+    }
+
+    function findIntersections(route1, route2) {
+        // Compare the steps of route1 with route2 to find intersections
+        const steps1 = route1.legs[0].steps;
+        const steps2 = route2.legs[0].steps;
+        const intersections = [];
+
+        // Check if any step of route1 intersects with any step of route2
+        for (const step1 of steps1) {
+            for (const step2 of steps2) {
+                if (stepsIntersect(step1, step2)) {
+                    intersections.push(step1.end_location);
+                }
+            }
+        }
+
+        return intersections;
+    }
+
+    function stepsIntersect(step1, step2) {
+        // Check if steps intersect based on their start and end locations
+        // For simplicity, let's assume they intersect if their start or end locations match
+        const start1 = step1.start_location;
+        const end1 = step1.end_location;
+        const start2 = step2.start_location;
+        const end2 = step2.end_location;
+
+        return (start1.equals(start2) || start1.equals(end2) || end1.equals(start2) || end1.equals(end2));
+    }
+
+    function findClosestFirstIntersection(intersections) {
+        // Find the closest intersection to the start location of path A
+        const startLocationA = intersections[0];
+        const distances = intersections.map(intersection => google.maps.geometry.spherical.computeDistanceBetween(startLocationA, intersection));
+        const closestIndex = distances.indexOf(Math.min(...distances));
+        return intersections[closestIndex];
+    }
+
+    function findClosestLastIntersection(intersections) {
+        // Find the closest intersection to the end location of path A
+        const endLocationA = intersections[intersections.length - 1];
+        const distances = intersections.map(intersection => google.maps.geometry.spherical.computeDistanceBetween(endLocationA, intersection));
+        const closestIndex = distances.indexOf(Math.min(...distances));
+        return intersections[closestIndex];
+    }
+
+    initMap();
+
+    // Find closest first and last intersections between two paths
+    findClosestFirstAndLastIntersections("Delhi, India", "Mumbai, Maharashtra, India", "Ghaziabad, Uttar Pradesh, India", "Delhi, India");
+});
+</script>
+</body>
+</html>
+
+
+function fetchNotification() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          var data = JSON.parse(xhr.responseText);
+          console.log(data);
+        } else {
+          console.error("Request error:", xhr.status);
+        }
+      }
+    };
+  
+    xhr.open("GET", "temp.php", true);
+    xhr.send();
+  }
+  fetchNotification();

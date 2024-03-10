@@ -226,6 +226,74 @@ a:visited {
   background-color: #f2f2f2;
 }
 
+/* data.html */
+#user i,
+#user_name {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+.main_body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 70vw;
+  overflow-y: scroll;
+}
+.data_box {
+  height: 20rem;
+  width: 80%;
+  margin: auto;
+  background-color: #f2f4f6;
+  border-radius: 2rem;
+  position: relative;
+  margin-bottom: 4rem;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.location_data {
+  padding: 4rem;
+}
+.location_data ul {
+  list-style-type: none;
+}
+.location_data ul ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+.location_data ul ul li {
+  font-size: 1.6rem;
+  margin-right: 2rem;
+  margin-bottom: 4rem;
+}
+.driver_data {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 4rem;
+}
+.driver_data ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.driver_data ul li {
+  margin-right: 2rem;
+  font-size: 1.8rem;
+}
+.price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4rem;
+  font-size: 2.4rem;
+}
+.data_box:hover {
+  transform: scale(1.03);
+}
 /* Media queries */
 @media only screen and (min-width: 1524px) and (max-width: 1724px) {
   .nav_bar-child {
@@ -264,7 +332,6 @@ a:visited {
     display: block;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #f2f4f6;
   }
   .search_box {
     width: 100%;
@@ -282,7 +349,9 @@ a:visited {
   .header_section-image {
     height: 70vh;
   }
-
+  .main_body {
+    width: 90%;
+  }
   .content {
     width: 60%;
   }
@@ -294,7 +363,6 @@ a:visited {
     display: block;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #f2f4f6;
   }
   .search_box {
     width: 100%;
@@ -312,12 +380,15 @@ a:visited {
     font-size: 3rem;
     font-weight: 400;
   }
+  .main_body {
+    width: 100%;
+  }
   .nav_bar-child {
     width: 90%;
   }
 
   .header_section-image {
-    height: 60vh;
+    height: 70vh;
   }
 
   .content {
@@ -331,7 +402,6 @@ a:visited {
     display: block;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #f2f4f6;
   }
   .search_box {
     width: 100%;
@@ -346,7 +416,10 @@ a:visited {
     font-size: 35.5%;
   }
   .header_section-image {
-    height: 55vh;
+    height: 60vh;
+  }
+  .main_body {
+    width: 100%;
   }
   .nav_bar-child {
     width: 90%;
@@ -364,7 +437,6 @@ a:visited {
     display: block;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #f2f4f6;
   }
   .search_box {
     width: 100%;

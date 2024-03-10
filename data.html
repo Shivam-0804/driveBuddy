@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo_w.png">
+    <title>DriveBuddy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="img_css/all.min.css">
+    <link rel="stylesheet" href="img_css/fontawesome.min.css">
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdnBmOuDyXW3seo8Iw3goRhZEmGVRsqNM&callback&libraries=places"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav_bar">
+            <ul class="nav_bar-child">
+                <li>
+                    <div class="logo_text">drive buddy</div>
+                </li>
+                <ul class="options">
+                    <li id="user_name">Name!</li>
+                    <li id="user"><i class="fa-solid fa-user"></i></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="main_body">
+            <div class="data_box">
+                <div class="location_data">
+                    <ul class="location_details">
+                        <ul><li id="ptime">Time</li><li id="Pickup">Pickup Location</li></ul>
+                        <ul><li id="dtime">Time</li><li id="drop">Drop Location</li></ul>
+                    </ul>
+                </div>
+                <div class="driver_data">
+                    <ul>
+                        <li><i class="fa-solid fa-user-tie"></i></li>
+                        <li id="driver_name">Name</li>
+                    </ul>
+                </div>
+                <div class="price" id="fair_price">₹30</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="map.js"></script>
+</body>
+
+</html>

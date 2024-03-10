@@ -42,11 +42,11 @@
                 </div>
                 <div class="search_head">
                     <ul>
-                        <li>Passenger</li>
-                        <li>Driver</li>
+                        <li id="Passenger" value="0">Passenger</li>
+                        <li id="driver" value="1">Driver</li>
                     </ul>
                 </div>
-                <div class="search_body">
+                <form action="data.html" method="POST" class="search_body">
                     <div class="search_box"><span id="curr"></span><input type="text" placeholder="Current Location"
                             id="current" required>
                     </div>
@@ -61,7 +61,7 @@
                         <input type="date" id="date" required>
                     </div>
                     <div class="submit_button"><input type="submit" value="Search Buddy"></div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
