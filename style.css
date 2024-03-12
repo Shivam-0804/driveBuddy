@@ -294,6 +294,20 @@ a:visited {
 .data_box:hover {
   transform: scale(1.03);
 }
+
+.map_content {
+  width: 90%;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.content_data{
+  background-color: #f2f2f2;
+}
 /* Media queries */
 @media only screen and (min-width: 1524px) and (max-width: 1724px) {
   .nav_bar-child {

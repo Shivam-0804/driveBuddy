@@ -46,7 +46,7 @@
                         <li id="driver" value="1">Driver</li>
                     </ul>
                 </div>
-                <form action="data.html" method="POST" class="search_body">
+                <form method="post" class="search_body">
                     <div class="search_box"><span id="curr"></span><input type="text" placeholder="Current Location"
                             id="current" required>
                     </div>
@@ -60,13 +60,13 @@
                         </div>
                         <input type="date" id="date" required>
                     </div>
-                    <div class="submit_button"><input type="submit" value="Search Buddy"></div>
+                    <div class="submit_button"><input type="submit" value="Search Buddy" id="search"></div>
                 </form>
             </div>
         </div>
     </div>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdnBmOuDyXW3seo8Iw3goRhZEmGVRsqNM&callback=initMap&libraries=places&v=weekly&solution_channel=GMP_CCS_autocomplete_v1"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdnBmOuDyXW3seo8Iw3goRhZEmGVRsqNM&libraries=places&v=weekly&solution_channel=GMP_CCS_autocomplete_v1"
         defer></script>
     <script src="script.js"></script>
 </body>
