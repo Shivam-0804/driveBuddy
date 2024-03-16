@@ -1,82 +1,70 @@
-  
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, 
+    <meta name="viewport" content="width=device-width, 
                          initial-scale=1.0">
     <title>login</title>
-    <link rel="stylesheet"
-          href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    
-    <header>
-        <h1 class="heading">Drive Buddy</h1>
-        <h3 class="title">LOGIN OR SIGN UP</h3>
-    </header>
- 
-    <!-- container div -->
-    <div class="container">
- 
-        <!-- upper button section to select
+    <div class="login_page">
+        <header>
+            <h1 class="heading">Drive Buddy</h1>
+            <h3 class="title">LOGIN OR SIGN UP</h3>
+        </header>
+
+        <!-- container div -->
+        <div class="container">
+
+            <!-- upper button section to select
              the login or signup form -->
-        <div class="slider"></div>
-        <div class="btn">
-            <button class="login">Login</button>
-            <button class="signup">Signup</button>
-        </div>
- 
-        <!-- Form section that contains the
-             login and the signup form -->
-        <div class="form-section">
- 
-            <!-- login form -->
-            <div class="login-box">
-                <input type="email"
-                       class="email ele"
-                       placeholder="youremail@email.com">
-                <input type="password"
-                       class="password ele"
-                       placeholder="password">
-                <button class="clkbtn">Login</button>
+            <div class="slider"></div>
+            <div class="btn">
+                <button class="login">Login</button>
+                <button class="signup">Signup</button>
             </div>
- 
-            <!-- signup form -->
-            <div class="signup-box">
-                <input type="text"
-                       class="name ele"
-                       placeholder="Enter your name">
-                <input type="email"
-                       class="email ele"
-                       placeholder="youremail@email.com">
-                <input type="password"
-                       class="password ele"
-                       placeholder="password">
-                <input type="password"
-                       class="password ele"
-                       placeholder="Confirm password">
-                <button class="clkbtn">Signup</button>
+
+            <!-- Form section that contains the
+             login and the signup form -->
+            <div class="form-section">
+
+                <!-- login form -->
+                <div class="login-box">
+                    <input type="email" class="email ele" placeholder="youremail@email.com">
+                    <input type="password" class="password ele" placeholder="password">
+                    <button class="clkbtn">Login</button>
+                </div>
+
+                <!-- signup form -->
+                <div class="signup-box">
+                    <input type="text" class="name ele" placeholder="Enter your name">
+                    <input type="email" class="email ele" placeholder="youremail@email.com">
+                    <input type="password" class="password ele" placeholder="password">
+                    <input type="password" class="password ele" placeholder="Confirm password">
+                    <button class="clkbtn">Signup</button>
+                </div>
             </div>
         </div>
     </div>
-    <script>let signup = document.querySelector(".signup");
+    <script>
+        let signup = document.querySelector(".signup");
         let login = document.querySelector(".login");
         let slider = document.querySelector(".slider");
         let formSection = document.querySelector(".form-section");
-         
+
         signup.addEventListener("click", () => {
             slider.classList.add("moveslider");
             formSection.classList.add("form-section-move");
         });
-         
+
         login.addEventListener("click", () => {
             slider.classList.remove("moveslider");
             formSection.classList.remove("form-section-move");
         });</script>
-         
-</body>
-</html>
 
+</body>
+
+</html>

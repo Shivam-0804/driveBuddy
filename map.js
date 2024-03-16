@@ -1,4 +1,6 @@
+const data = JSON.parse(localStorage.getItem("myObject"));
 document.addEventListener("DOMContentLoaded", function () {
+  const data = JSON.parse(localStorage.getItem("myObject"));
   let directionsService;
   let map;
   let directionsRenderer1;
@@ -38,10 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   initMap();
-  plotPath("Delhi, India", "Mumbai, Maharashtra, India", directionsRenderer1);
-  plotPath(
-    "Ghaziabad, Uttar Pradesh, India",
-    "Delhi, India",
-    directionsRenderer2
-  );
+  plotPath(data.dorigin, data.ddestination, directionsRenderer1);
+  plotPath(data.floc, data.lloc, directionsRenderer2);
 });
